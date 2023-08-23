@@ -14,7 +14,7 @@ jobs:
           packages: >
             latex-bin tools alphalph metalogo hyperref infwarerr amsmath amsfonts booktabs
             colortbl hologo pdftexcmds iftex kvoptions enumitem psnfss csquotes fancyvrb
-            underscore metafont
+            underscore metafont ec
       - run: pdflatex intopdf.dtx
       - run: pdflatex example.tex
       - name: Upload example.pdf
