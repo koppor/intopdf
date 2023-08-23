@@ -1,0 +1,21 @@
+name: Check
+on:
+  push:
+
+jobs:
+  texlive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v2
+        with:
+          packages: >
+            latex-bin
+      - run: pdflatex example.tex
+      - name: Upload example.pdf
+        uses: actions/upload-artifact@v3
+        with:
+          name: example
+          path: *.pdf
