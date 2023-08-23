@@ -13,6 +13,7 @@ jobs:
         with:
           packages: >
             latex-bin
+      - run: pdflatex intopdf.dtx
       - run: pdflatex example.tex
       - name: Upload example.pdf
         uses: actions/upload-artifact@v3
