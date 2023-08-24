@@ -17,7 +17,7 @@ jobs:
             underscore metafont ec hypdoc epstopdf-pkg
       - name: "Enable bootstrapping intopdf.sty"
         run: |
-          echo "\newcommand{\attachandlink}[4][x]{BOOTSTRAP-MODE}" > intopdf.sty
+          echo "\\newcommand\\attachandlink[4][x]{BOOTSTRAP-MODE}" > intopdf.sty
       - run: pdflatex intopdf.dtx
       - run: pdflatex intopdf.dtx
       - run: pdflatex example.tex
