@@ -18,8 +18,13 @@ jobs:
       - name: "Enable bootstrapping intopdf.sty"
         run: |
           echo "\\newcommand\\attachandlink[4][x]{BOOTSTRAP-MODE}" > intopdf.sty
+      - run: cat intopdf.sty
       - run: pdflatex intopdf.dtx
+      - run: cat intopdf.sty
       - run: pdflatex intopdf.dtx
+      - run: cat intopdf.sty
+      - run: pdflatex intopdf.dtx
+      - run: cat intopdf.sty
       - run: pdflatex example.tex
       - name: Upload PDFs
         uses: actions/upload-artifact@v3
