@@ -14,7 +14,7 @@ jobs:
           packages: >
             latex-bin tools alphalph metalogo hyperref infwarerr amsmath amsfonts booktabs
             colortbl hologo pdftexcmds iftex kvoptions enumitem psnfss csquotes fancyvrb
-            underscore metafont ec hypdoc
+            underscore metafont ec hypdoc epstopdf-pkg
       - name: "Enable bootstrapping intopdf.sty"
         run: |
           echo "\newcommand{\attachandlink}[4][x]{BOOTSTRAP-MODE}" > intopdf.sty
