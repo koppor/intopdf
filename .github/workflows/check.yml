@@ -9,13 +9,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install TeX Live
-        uses: zauguin/install-texlive@v2
+        uses: zauguin/install-texlive@v3
         with:
           packages: >
             latex-bin tools alphalph metalogo hyperref infwarerr amsmath amsfonts booktabs
             colortbl hologo pdftexcmds iftex kvoptions enumitem psnfss csquotes fancyvrb
             underscore metafont ec hypdoc
-      - name: "Enable bootstrapping intopdf.tex"
+      - name: "Enable bootstrapping intopdf.sty"
         run: |
           echo "\newcommand{\attachandlink}[4][x]{BOOTSTRAP-MODE}" > intopdf.sty
       - run: pdflatex intopdf.dtx
