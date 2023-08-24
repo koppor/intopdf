@@ -15,10 +15,14 @@ jobs:
             latex-bin tools alphalph metalogo hyperref infwarerr amsmath amsfonts booktabs
             colortbl hologo pdftexcmds iftex kvoptions enumitem psnfss csquotes fancyvrb
             underscore metafont ec hypdoc
+      - name: "Enable bootstrapping intopdf.tex"
+        run: |
+          echo "\newcommand{\attachandlink}[4][x]{BOOTSTRAP-MODE}" > intopdf.sty
+      - run: pdflatex intopdf.dtx
       - run: pdflatex intopdf.dtx
       - run: pdflatex example.tex
-      - name: Upload example.pdf
+      - name: Upload PDFs
         uses: actions/upload-artifact@v3
         with:
-          name: example
+          name: PDFs
           path: "*.pdf"
